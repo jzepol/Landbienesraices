@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Propiedad {
+  id                 Int      @id @default(autoincrement())
+  titulo             String
+  descripcion        String?
+  tipo               String
+  operacion          String
+  estado             Boolean  @default(true)
+  direccion          String?
+  barrio             String?
+  ciudad             String   @default("Villa Mercedes")
+  provincia          String   @default("San Luis")
+  precio             Float
+  moneda             String   @default("USD")
+  superficieTotal    Float?
+  superficieCubierta Float?
+  dormitorios        Int?
+  banos              Int?
+  cochera            Boolean  @default(false)
+  antiguedad         Int?
+  piso               Int?
+  ambientes          Int?
+  servicioLuz        Boolean  @default(false)
+  servicioAgua       Boolean  @default(false)
+  servicioGas        Boolean  @default(false)
+  servicioInternet   Boolean  @default(false)
+  servicioCloacas    Boolean  @default(false)
+  servicioPavimento  Boolean  @default(false)
+  servicioAlumbrado  Boolean  @default(false)
+  fotos              String?
+  fotoPrincipal      String?
+  creadoEn           DateTime @default(now())
+  actualizadoEn      DateTime @updatedAt
+}
