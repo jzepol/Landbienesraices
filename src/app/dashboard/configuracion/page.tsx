@@ -23,7 +23,7 @@ export default function ConfiguracionPage() {
         <div>
           <h3 className="font-medium text-warm-black">Base de datos</h3>
           <p className="text-sm text-warm-black/50 mt-1">
-            SQLite (desarrollo) — Migrable a PostgreSQL para producción.
+            PostgreSQL
           </p>
         </div>
       </div>
